@@ -1,0 +1,28 @@
+<h1 class="">Product List</h1>
+<div class="container">
+  <table class="table table-info table-striped">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Author</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let book of books">
+      <tr>
+        <td>{{book.id}}</td>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td><a [routerLink]="['/update-product/', book.id]" class="mt-4 mb-4">Edit</a></td>
+        <button type="button" class="btn btn-danger" >Delete</button>
+      </tr>
+    </ng-container>
+    </tbody>
+
+  </table>
+</div>
+
+

@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "KIEMTRAMODULE5"
+  "defaultProject": "KIEMTRAMODULE5",
+  "cli": {
+    "analytics": "aaf72907-ba9e-4a2f-bd52-3b8713eb8bb5"
+  }
 }

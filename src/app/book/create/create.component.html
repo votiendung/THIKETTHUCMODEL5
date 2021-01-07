@@ -1,0 +1,27 @@
+<h1>Create New Product</h1>
+<form action="" (ngSubmit)="createBook()">
+  <table class="table table-success">
+    <tr>
+      <div>
+        <label>Name</label>
+        <td><input type="text" name="name" [(ngModel)]="book.title"></td>
+      </div>
+    </tr>
+    <tr>
+      <div>
+        <label>AUTHOR</label>
+        <td><input type="text" name="price" [(ngModel)]="book.author"></td>
+      </div>
+    </tr>
+    <tr>
+      <div>
+        <label>Description</label>
+        <td><input type="text" name="description" [(ngModel)]="book.description"></td>
+      </div>
+    </tr>
+    <tr>
+      <td><button>Create</button></td>
+    </tr>
+  </table>
+</form>
+
