@@ -1,4 +1,4 @@
-<h1 class="">Product List</h1>
+<h1 class="">Books List</h1>
 <div class="container">
   <table class="table table-info table-striped">
     <thead>
@@ -11,13 +11,13 @@
     </tr>
     </thead>
     <tbody>
-    <ng-container *ngFor="let book of books">
+    <ng-container *ngFor="let book of books,let i = index">
       <tr>
-        <td>{{book.id}}</td>
-        <td>{{book.title}}</td>
+        <td>{{i + 1}}</td>
+        <td><a [routerLink]= "['/detail/', book.id]">{{book.title}}</a></td>
         <td>{{book.author}}</td>
-        <td><a [routerLink]="['/update-product/', book.id]" class="mt-4 mb-4">Edit</a></td>
-        <button type="button" class="btn btn-danger" >Delete</button>
+        <td><a [routerLink]="['/edit/', book.id]" class="mt-4 mb-4">Edit</a></td>
+        <td><a href="/list" (click)="deleteBook(book.id)" class="mt-4 mb-4">Delete</a></td>
       </tr>
     </ng-container>
     </tbody>

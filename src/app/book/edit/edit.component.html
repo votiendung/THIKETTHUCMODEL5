@@ -1,1 +1,21 @@
-<p>edit works!</p>
+<h1>Update Product Info</h1>
+<form (ngSubmit)="updateBook(id)">
+  <table class="table table-success">
+    <tr>
+      <td>Name:</td>
+      <td><input type="text" name="name" [(ngModel)]="book.title"></td>
+    </tr>
+    <tr>
+      <td>Author:</td>
+      <td><input type="text" name="price" [(ngModel)]="book.author"></td>
+    </tr>
+    <tr>
+      <td>Description:</td>
+      <td><input type="text" name="description" [(ngModel)]="book.description"></td>
+    </tr>
+    <tr>
+      <td><button>Submit</button></td>
+    </tr>
+  </table>
+</form>
+

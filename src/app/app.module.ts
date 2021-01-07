@@ -8,13 +8,15 @@ import { CreateComponent } from './book/create/create.component';
 import { ListComponent } from './book/list/list.component';
 import { EditComponent } from './book/edit/edit.component';
 import {FormsModule} from '@angular/forms';
+import { DetailComponent } from './book/detail/detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateComponent,
     ListComponent,
-    EditComponent
+    EditComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

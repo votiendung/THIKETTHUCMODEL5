@@ -9,12 +9,14 @@ import {BookService} from '../../../sevice/book.service';
 })
 export class CreateComponent implements OnInit {
   book: Book = {};
+  private output = '';
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
   }
   // tslint:disable-next-line:typedef
   createBook() {
-    return this.bookService.createNewBook(this.book).toPromise();
+    return this.bookService.createNewBook(this.book).subscribe( output => {this.output = 'Thêm Sách Mới Thành Công'; } ,
+      output => {this.output = 'Lỗi nhé'; } );
   }
 }

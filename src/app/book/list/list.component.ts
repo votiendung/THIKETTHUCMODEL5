@@ -11,6 +11,7 @@ import {ActivatedRoute} from '@angular/router';
 export class ListComponent implements OnInit {
   books: Book[] = [];
   id = -1;
+  private output = '';
   constructor(private bookService: BookService,
               private activatedRoute: ActivatedRoute) {
     this.activatedRoute.paramMap.subscribe(paramMap => {
@@ -28,6 +29,17 @@ export class ListComponent implements OnInit {
     this.bookService.getAllBook().subscribe(result => {
       this.books = result;
     }, error => console.log(error));
+  }
+  // tslint:disable-next-line:typedef
+  deleteBook(id: number){
+    if (confirm('Bạn có chắc chắn muốn xóa')) {
+      this.bookService.deleteBook(id).subscribe(() => {
+        this.output = 'Xóa thành công';
+        this.getAllBook();
+      });
+    }else {
+      return;
+    }
   }
 
 }
